@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="language" content="English">
+        <meta name="title" content="downtube">
+        <meta name="description" content="downtube is your go-to place for downloads from Youtube. zero ads, trackers, or other creepy bullshit. simply paste a share link and you're ready to rock!">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="youtube,download,downtube,snaptube">
+        <meta name="robots" content="index, follow">
+        <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+        <meta name="google-adsense-account" content="ca-pub-3637953948803284">
+        <title>Downtube.online</title>
+        <link rel="stylesheet" href="css/style.css">  
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KE5DSNH3W"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5KE5DSNH3W');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-N8D3BTJN');</script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <body id="bg-video" class="desktop">
+                <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8D3BTJN"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id="bg-video">
+            <object type="image/svg+xml" data="icon/bg.svg"></object>
+        </div>
+        <style>
+                #bg-video {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    min-width: 100%;
+                    min-height: 100%;
+                    width: auto;
+                    height: auto;
+                    z-index: -1; 
+                }
+                .ul1{
+                    list-style-type: none;
+                }
+
+                .ul1::after{
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+                nav .li1{
+                    float: left;
+                    width: 15%;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                }
+                nav{
+                    width: 100%;
+                    position: sticky;
+                    top: 2px;
+                    
+                }
+                #home {
+                    /*position: fixed;*/
+                    width: 100%;
+                    height: 100%
+                }
+
+
+        </style>
+        <!--<nav>-->
+        <!--    <ul class="ul1">-->
+        <!--        <li class="li1" hidden>.</li>-->
+        <!--        <li class="li1"><a href="index.html">Home</a></li>-->
+        <!--        <li class="li1"><a href="Privacy.html">Privacy Policy</a></li>-->
+        <!--        <li class="li1"><a href="Terms.html">Terms of use</a></li>-->
+        <!--        <li class="li1"><a href="About.html">About US</a></li>-->
+        <!--        <li class="li1"><a href="contact.html">contact us</a></li>-->
+        <!--    </ul>-->
+        <!--</nav>-->
+        <div id="popup-settings" class="popup center box scrollable">
+            <div id="popup-content">
+                <div id="popup-header" class="popup-header">
+                    <div id="popup-header-contents">
+                        <div id="popup-title">
+                            <img class="emoji" draggable="false" height="30" width="30" style="margin-right:0.7rem;" alt="⚙️" src="icon/gear.svg" loading="lazy">settings
+                        </div>
+                    </div>
+                    <div class="glass-bkg alone"></div>
+                </div>
+                <div id="tab-settings-video" class="popup-tab-content tab-content-settings">
+                    <div id="settings-downloads" class="settings-category">
+                        <div class="category-title">quality</div>
+                        <div class="category-content">
+                            <div id="vQuality-switcher" class="switch-container">
+                                <div class="switches">
+                                    <button id="vQuality-max" class="switch first" onclick="changeSwitcher('vQuality', 'max')">8k+</button>
+                                    <button id="vQuality-2160" class="switch" onclick="changeSwitcher('vQuality', '2160')">4k</button>
+                                    <button id="vQuality-1440" class="switch" onclick="changeSwitcher('vQuality', '1440')">1440p</button>
+                                    <button id="vQuality-1080" class="switch" onclick="changeSwitcher('vQuality', '1080')">1080p</button>
+                                    <button id="vQuality-720" class="switch" onclick="changeSwitcher('vQuality', '720')">720p</button>
+                                    <button id="vQuality-480" class="switch" onclick="changeSwitcher('vQuality', '480')">480p</button>
+                                    <button id="vQuality-360" class="switch last" onclick="changeSwitcher('vQuality', '360')">360p</button>
+                                </div>
+                                <div class="explanation">if selected quality isn't available, closest one is used instead.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settings-tiktok" class="settings-category">
+                        <div class="category-title">tiktok</div>
+                        <div class="category-content">
+                            <label id="disableTikTokWatermark-chkbx" class="checkbox no-margin">
+                                <input id="disableTikTokWatermark" type="checkbox" aria-label="disable watermark" onclick="checkbox('disableTikTokWatermark')">
+                                <span>disable watermark</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="settings-youtube codec" class="settings-category">
+                        <div class="category-title">youtube codec</div>
+                        <div class="category-content">
+                            <div id="vCodec-switcher" class="switch-container">
+                                <div class="switches">
+                                    <button id="vCodec-h264" class="switch first" onclick="changeSwitcher('vCodec', 'h264')">h264 (mp4)</button>
+                                    <button id="vCodec-av1" class="switch" onclick="changeSwitcher('vCodec', 'av1')">av1 (mp4)</button>
+                                    <button id="vCodec-vp9" class="switch last" onclick="changeSwitcher('vCodec', 'vp9')">vp9 (webm)</button>
+                                </div>
+                                <div class="explanation">
+                                    h264: generally better player support, but quality tops out at 1080p.<br>
+                                    av1: low player support, but supports 8k &amp;HDR.<br>
+                                    vp9: usually highest bitrate, preserves most detail. supports 4k &amp;HDR.<br>
+                                    <br>pick h264 if you want best editor/player/social media compatibility.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settings-vimeo downloads type" class="settings-category">
+                        <div class="category-title">vimeo downloads type</div>
+                        <div class="category-content">
+                            <div id="vimeoDash-switcher" class="switch-container">
+                                <div class="switches">
+                                    <button id="vimeoDash-false" class="switch first" onclick="changeSwitcher('vimeoDash', 'false')">progressive</button>
+                                    <button id="vimeoDash-true" class="switch last" onclick="changeSwitcher('vimeoDash', 'true')">dash</button>
+                                </div>
+                                <div class="explanation">
+                                    progressive: direct file link to vimeo's cdn. max quality is 1080p.<br>
+                                    dash: video and audio are merged by downtube into one file. max quality is 4k.<br>
+                                    <br>pick "progressive" if you want best editor/player/social media compatibility. if progressive download isn't available, dash is used instead.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-settings-audio" class="popup-tab-content tab-content-settings">
+                    <div id="settings-general" class="settings-category">
+                        <div class="category-title">format</div>
+                        <div class="category-content">
+                            <div id="aFormat-switcher" class="switch-container">
+                                <div class="switches">
+                                    <button id="aFormat-best" class="switch first" onclick="changeSwitcher('aFormat', 'best')">best</button>
+                                    <button id="aFormat-mp3" class="switch" onclick="changeSwitcher('aFormat', 'mp3')">mp3</button>
+                                    <button id="aFormat-ogg" class="switch" onclick="changeSwitcher('aFormat', 'ogg')">ogg</button>
+                                    <button id="aFormat-wav" class="switch" onclick="changeSwitcher('aFormat', 'wav')">wav</button>
+                                    <button id="aFormat-opus" class="switch last" onclick="changeSwitcher('aFormat', 'opus')">opus</button>
+                                </div>
+                                <div class="explanation">when "best" format is selected, you get audio the way it is on service's side. it's not re-encoded. everything else will be re-encoded.</div>
+                            </div>
+                            <div class="separator top-margin"></div>
+                            <label id="muteAudio-chkbx" class="checkbox no-margin">
+                                <input id="muteAudio" type="checkbox" aria-label="mute audio" onclick="checkbox('muteAudio')">
+                                <span>mute audio</span>
+                            </label>
+                            <div class="explanation">removes audio from video downloads when possible.</div>
+                        </div>
+                    </div>
+                    <div id="settings-dub" class="settings-category">
+                        <div class="category-title">youtube audio track</div>
+                        <div class="category-content">
+                            <div id="dubLang-switcher" class="switch-container">
+                                <div class="switches">
+                                    <button id="dubLang-original" class="switch first" onclick="changeSwitcher('dubLang', 'original')">original</button>
+                                    <button id="dubLang-auto" class="switch last" onclick="changeSwitcher('dubLang', 'auto')">auto</button>
+                                </div>
+                                <div class="explanation">
+                                    defines which audio track will be used. if dubbed track isn't available, original video language is used instead.<br>
+                                    <br>
+                                    original: original video language is used.<br>auto: default browser (and downtube) language is used.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settings-tiktok" class="settings-category">
+                        <div class="category-title">tiktok</div>
+                        <div class="category-content">
+                            <label id="fullTikTokAudio-chkbx" class="checkbox no-margin">
+                                <input id="fullTikTokAudio" type="checkbox" aria-label="full audio" onclick="checkbox('fullTikTokAudio')">
+                                <span>full audio</span>
+                            </label>
+                            <div class="explanation">downloads original sound used in the video without any additional changes by the post's author.</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-settings-other" class="popup-tab-content tab-content-settings">
+                    <div id="settings-appearance" class="settings-category">
+                        <div class="category-title">appearance</div>
+                        <div class="category-content">
+                            <div id="theme-switcher" class="switch-container">
+                                <div class="switches">
+                                    <button id="theme-auto" class="switch first" onclick="changeSwitcher('theme', 'auto')">auto</button>
+                                    <button id="theme-dark" class="switch" onclick="changeSwitcher('theme', 'dark')">dark</button>
+                                    <button id="theme-light" class="switch last" onclick="changeSwitcher('theme', 'light')">light</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <div id="popup-tabs" class="switches popup-tabs">
+                <div class="switches popup-tabs-child">
+                    <button id="back-button" class="switch tab-settings" onclick="popup('settings', 0)" aria-label="go back and close the popup">
+                        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.1905 28.5L2 16L14.1905 3.5L16.2857 5.62054L7.65986 14.4654H30V17.5346H7.65986L16.2857 26.3516L14.1905 28.5Z" fill="#E1E1E1"></path>
+                        </svg>
+                    </button>
+                    <button id="tab-button-settings-video" class="switch tab tab-settings" onclick="changeTab(event, 'tab-settings-video', 'settings')">
+                        <img class="emoji" draggable="false" height="22" width="22" alt="🎬" src="icon/clapper_board.svg" loading="lazy">video
+                    </button>
+                    <button id="tab-button-settings-audio" class="switch tab tab-settings" onclick="changeTab(event, 'tab-settings-audio', 'settings')">
+                        <img class="emoji" draggable="false" height="22" width="22" alt="🎶" src="icon/musical_notes.svg" loading="lazy">audio
+                    </button>
+
+                </div>
+                <div class="glass-bkg alone"></div>
+            </div>
+        </div>
+        <div id="popup-picker" class="popup center box scrollable">
+            <div id="popup-content">
+                <div id="popup-header" class="popup-header">
+                    <div id="popup-header-contents">
+                        <div id="popup-title">
+                            <img class="emoji" draggable="false" height="30" width="30" style="margin-right:0.7rem;" alt="🧮" src="icon/abacus.svg" loading="lazy">
+                            <div id="picker-title"></div>
+                        </div>
+                        <div class="explanation">
+                            <div id="picker-subtitle"></div>
+                        </div>
+                    </div>
+                    <div class="glass-bkg alone"></div>
+                </div>
+                <div id="picker-holder"></div>
+            </div>
+            <div id="popup-tabs" class="switches popup-tabs">
+                <div id="picker-buttons" class="switches popup-tabs-child">
+                    <button id="back-button" class="switch tab-picker" onclick="popup('picker', 0)" aria-label="go back and close the popup">
+                        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.1905 28.5L2 16L14.1905 3.5L16.2857 5.62054L7.65986 14.4654H30V17.5346H7.65986L16.2857 26.3516L14.1905 28.5Z" fill="#E1E1E1"></path>
+                        </svg>
+                    </button>
+                    <a id="picker-download" class="switch" target="_blank" href="/">download audio</a>
+                </div>
+                <div class="glass-bkg alone"></div>
+            </div>
+        </div>
+
+
+        
+        <div id="popup-backdrop" onclick="hideAllPopups()"></div>
+        <!-- style="visibility:hidden" -->
+        <div id="home" >
+            <div  class="center1">
+                <a href="https://downtube.online/">
+                    <img  height="150" width="150"  src="icon/logo.png" loading="lazy">
+                 </a>    
+            </div>
+            <div id="cobalt-main-box" class="center">
+                <!--<div id="logo">URL : </div>-->
+                <div id="download-area">
+                    <div id="top">
+                        <input id="url-input-area" class="mono" type="text" autocorrect="off" maxlength="128" autocapitalize="off" placeholder="paste the link here" aria-label="link input area" oninput="button()">
+                        <button id="url-clear" onclick="clearInput()" style="display:none;">x</button>
+                        <input id="download-button" class="mono dontRead" onclick="download(document.getElementById('url-input-area').value)" type="submit" value="" disabled="true" aria-label="download button">
+                    </div>
+                    <div id="bottom">
+                        <div id="audioMode" class="switches">
+                            <button id="audioMode-false" class="switch first" onclick="changeSwitcher('audioMode', 'false')">
+                                <img class="emoji" draggable="false" height="22" width="22" alt="✨" src="icon/sparkles.svg" loading="lazy">auto mode
+                            </button>
+                            <button id="audioMode-true" class="switch last" onclick="changeSwitcher('audioMode', 'true')">
+                                <img class="emoji" draggable="false" height="22" width="22" alt="🎶" src="icon/musical_notes.svg" loading="lazy">audio mode
+                            </button>
+                        </div>
+                        <div id="footer-buttons">
+                            <div class="footer-pair">
+        
+                            </div>
+                            <div class="footer-pair">
+                                <button id="settings-footer" class="switch footer-button" onclick="popup('settings', 1)" aria-label="open settings popup">
+                                    <img class="emoji" draggable="false" height="22" width="22" alt="⚙️" src="icon/gear.svg" loading="lazy">settings
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <footer id="footer">
+            </footer> -->
+        </div>
+        <script type="text/javascript">
+            let apiURL = 'https://co.wuk.sh';
+        </script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>
